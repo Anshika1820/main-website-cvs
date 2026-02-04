@@ -31,8 +31,9 @@ const About = () => {
           color: #fff;
         }
 
-        section {
-          padding: 120px 24px;
+        /* General section styling (smaller padding for most sections) */
+        section:not(.hero) {
+          padding: 100px 24px;
           position: relative;
           overflow: hidden;
         }
@@ -61,6 +62,7 @@ const About = () => {
 
         /* ===== HERO ===== */
         .hero {
+          padding: 80px 24px 120px 24px; /* smaller top padding to fix navbar issue */
           background-image:
             linear-gradient(
               180deg,
