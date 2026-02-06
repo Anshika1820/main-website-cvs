@@ -1,6 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import ContactUs from "./ContactUs";
+import ServicesDetails from "./ServicesDetails";
 
 const services = [
   {
@@ -61,193 +63,119 @@ const Services = () => {
   return (
     <>
     <style>{`
-      /* Container */
-      .services-container {
-        background-color: #f8fafc;
-        font-family: Arial, sans-serif;
-      }
+  .services-container {
+    background-color: #f8fafc;
+    font-family: Arial, sans-serif;
+  }
 
-      .hero-section {
-        background: linear-gradient(to bottom right, #ebf8ff, #e0f2fe, #f1f5f9);
-        padding: 7rem 1.5rem;
-      }
+  .hero-section {
+    background: linear-gradient(135deg, #ffffff, #f1f5f9);
+    padding: 7rem 1.5rem;
+  }
 
-      .hero-content {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 4rem;
-        align-items: center;
-      }
+  .hero-subtitle {
+    color: #0b2a5b;
+  }
 
-      @media (min-width: 1024px) {
-        .hero-content {
-          grid-template-columns: 1fr 1fr;
-        }
-      }
+  .hero-title {
+    color: #0b1c3f;
+  }
 
-      .hero-image-wrapper {
-        position: relative;
-      }
+  .hero-description {
+    color: #475569;
+  }
 
-      .hero-image-border {
-        position: absolute;
-        inset: 0;
-        border: 1px solid #bfdbfe;
-        border-radius: 0.75rem;
-        transform: translate(-0.75rem, 0.75rem);
-      }
+  .hero-button {
+    margin-top: 2rem;
+    background-color: #0b2a5b;
+    color: white;
+    padding: 0.75rem 1.75rem;
+    border-radius: 0.375rem;
+    font-weight: 600;
+    box-shadow: 0 6px 14px rgba(11,42,91,0.15);
+    cursor: pointer;
+    transition: all 0.3s;
+  }
 
-      .hero-image {
-        position: relative;
-        width: 100%;
-        height: 420px;
-        object-fit: cover;
-        border-radius: 0.75rem;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-      }
+  .hero-button:hover {
+    background-color: #163d82;
+  }
 
-      .hero-text .hero-subtitle {
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        font-weight: 600;
-        color: #1e40af;
-        font-size: 0.875rem;
-      }
+  /* SERVICES SECTION */
+  .services-section {
+    padding: 6rem 1.5rem;
+    background: linear-gradient(to bottom, #ffffff, #f1f5f9);
+    position: relative;
+  }
 
-      .hero-title {
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin: 1rem 0 1.5rem 0;
-        color: #111827;
-        line-height: 1.2;
-      }
+  .services-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0b1c3f;
+    margin-bottom: 0.75rem;
+  }
 
-      .hero-description {
-        font-size: 1.125rem;
-        color: #475569;
-        max-width: 36rem;
-      }
+  .services-description {
+    color: #475569;
+    max-width: 42rem;
+  }
 
-      .hero-button {
-        margin-top: 2rem;
-        background-color: #2563eb;
-        color: white;
-        padding: 0.75rem 1.75rem;
-        border-radius: 0.375rem;
-        font-weight: 600;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        cursor: pointer;
-        transition: background-color 0.3s;
-      }
+  .service-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    transition: all 0.3s;
+    box-shadow: 0 10px 25px rgba(11,42,91,0.05);
+  }
 
-      .hero-button:hover {
-        background-color: #1d4ed8;
-      }
+  .service-card:hover {
+    border-color: #0b2a5b;
+    box-shadow: 0 20px 40px rgba(11,42,91,0.12);
+    transform: translateY(-4px);
+  }
 
-      /* SERVICES SECTION */
-      .services-section {
-        padding: 6rem 1.5rem;
-        background: linear-gradient(to bottom, #f8fafc, #ebf8ff);
-        position: relative;
-      }
+  .service-card-title-wrapper {
+    border-left: 4px solid #0b2a5b;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+  }
 
-      .services-container-inner {
-        max-width: 1200px;
-        margin: 0 auto;
-      }
+  .service-card-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #0b1c3f;
+  }
 
-      .services-header {
-        margin-bottom: 3.5rem;
-      }
+  .service-card-desc {
+    color: #475569;
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
 
-      .services-title {
-        font-size: 2rem;
-        font-weight: 700;
-        color: #111827;
-        margin-bottom: 0.75rem;
-      }
+  .services-floating-button {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: #0b2a5b;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    box-shadow: 0 10px 20px rgba(11,42,91,0.2);
+    cursor: pointer;
+    transition: 0.3s;
+  }
 
-      .services-description {
-        color: #475569;
-        max-width: 42rem;
-      }
+  .services-floating-button:hover {
+    background-color: #163d82;
+  }
 
-      .services-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-      }
+  .contact-section {
+    background-color: white;
+  }
+`}</style>
 
-      @media (min-width: 768px) {
-        .services-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-      }
-
-      @media (min-width: 1024px) {
-        .services-grid {
-          grid-template-columns: repeat(3, 1fr);
-        }
-      }
-
-      .service-card {
-        background-color: white;
-        border: 1px solid #e2e8f0;
-        padding: 2rem;
-        border-radius: 0.75rem;
-        transition: all 0.3s;
-      }
-
-      .service-card:hover {
-        border-color: #2563eb;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-      }
-
-      .service-card-title-wrapper {
-        border-left: 4px solid #2563eb;
-        padding-left: 1rem;
-        margin-bottom: 1rem;
-      }
-
-      .service-card-title {
-        font-size: 1.125rem;
-        font-weight: 600;
-        color: #111827;
-      }
-
-      .service-card-desc {
-        color: #475569;
-        font-size: 0.875rem;
-        line-height: 1.5;
-      }
-
-      /* Floating Button */
-      .services-floating-button {
-        position: absolute;
-        bottom: 2rem;
-        right: 2rem;
-        background-color: #1e40af;
-        color: white;
-        padding: 0.75rem 1.5rem;
-        border-radius: 9999px;
-        font-weight: 600;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        cursor: pointer;
-        transition: background-color 0.3s;
-      }
-
-      .services-floating-button:hover {
-        background-color: #1e3a8a;
-      }
-
-      /* CONTACT SECTION */
-      .contact-section {
-        background-color: white;
-      }
-
-    `}</style>
     <div className="services-container">
 
       {/* HERO SECTION */}
@@ -305,12 +233,10 @@ const Services = () => {
         </div>
 
         {/* Floating Button */}
-        <button
-          onClick={() => navigate("/ServicesDetails")}
-          className="services-floating-button"
-        >
+        <Link to="/services-details" className="services-floating-button">
           View Service Details
-        </button>
+        </Link>
+
       </section>
 
       {/* CONTACT SECTION */}
