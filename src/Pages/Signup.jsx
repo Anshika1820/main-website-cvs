@@ -20,19 +20,17 @@ const Signup = ({ isOpen, onClose }) => {
             position: fixed;
             top: 0; left: 0;
             width: 100%; height: 100%;
-            background: rgba(5, 11, 24, 0.85);
+            background: rgba(15, 23, 42, 0.85);
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 2000;
-            backdrop-filter: blur(4px);
+            backdrop-filter: blur(6px);
           }
 
           .modal-content {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(56, 189, 248, 0.25);
-            border-radius: 24px;
+            background: #ffffff;
+            border-radius: 20px;
             padding: 40px 30px;
             width: 90%;
             max-width: 400px;
@@ -40,12 +38,13 @@ const Signup = ({ isOpen, onClose }) => {
             flex-direction: column;
             gap: 20px;
             position: relative;
-            box-shadow: 0 10px 40px rgba(56, 189, 248, 0.2);
+            box-shadow: 0 20px 50px rgba(15, 23, 42, 0.2);
+            border-top: 4px solid #1e3a8a;
           }
 
           .modal-content h2 {
             text-align: center;
-            color: #38bdf8;
+            color: #1e3a8a;
             font-size: 28px;
             margin-bottom: 10px;
           }
@@ -58,29 +57,29 @@ const Signup = ({ isOpen, onClose }) => {
 
           .modal-content input {
             padding: 12px 15px;
-            border: 1px solid rgba(255,255,255,0.25);
+            border: 1px solid #e2e8f0;
             border-radius: 12px;
             font-size: 14px;
-            background: rgba(255,255,255,0.05);
-            color: #fff;
+            background: #f8fafc;
+            color: #0f172a;
             outline: none;
-            transition: 0.3s;
+            transition: 0.25s;
           }
 
           .modal-content input::placeholder {
-            color: #cbd5e1;
+            color: #64748b;
           }
 
           .modal-content input:focus {
-            border-color: #38bdf8;
-            box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
-            background: rgba(255,255,255,0.08);
+            border-color: #1e3a8a;
+            background: #ffffff;
+            box-shadow: 0 0 0 3px rgba(30,58,138,0.15);
           }
 
           .modal-content button {
             padding: 12px;
-            background: #38bdf8;
-            color: #000;
+            background: linear-gradient(135deg, #1e3a8a, #1d4ed8);
+            color: #ffffff;
             border: none;
             border-radius: 12px;
             cursor: pointer;
@@ -89,8 +88,8 @@ const Signup = ({ isOpen, onClose }) => {
           }
 
           .modal-content button:hover {
-            background: #0ea5e9;
-            box-shadow: 0 5px 20px rgba(56,189,248,0.4);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 18px rgba(30,58,138,0.3);
           }
 
           .close-btn {
@@ -99,12 +98,12 @@ const Signup = ({ isOpen, onClose }) => {
             right: 18px;
             font-size: 26px;
             cursor: pointer;
-            color: #38bdf8;
-            transition: 0.3s;
+            color: #1e3a8a;
+            transition: 0.2s;
           }
 
           .close-btn:hover {
-            color: #0ea5e9;
+            color: #1d4ed8;
           }
         `}</style>
       </div>
