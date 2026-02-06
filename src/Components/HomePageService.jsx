@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const HomePageService = () => {
   useEffect(() => {
@@ -23,13 +24,14 @@ const HomePageService = () => {
       <style>{`
         .services-section {
           padding: 120px 8%;
-          background: linear-gradient(180deg, #f9fbff, #ffffff);
+          background: #ffffff;
           text-align: center;
+          position: relative;
         }
 
         .services-title {
           font-size: 42px;
-          color: #0b1c3f;
+          color: #0a1931;
           margin-bottom: 18px;
           font-weight: 800;
         }
@@ -49,15 +51,16 @@ const HomePageService = () => {
         }
 
         .service-card {
-          background: rgba(11, 28, 63, 0.06);
+          background: #ffffff;
           padding: 50px 34px;
           border-radius: 20px;
-          box-shadow: 0 20px 45px rgba(11, 28, 63, 0.08);
+          box-shadow: 0 20px 45px rgba(2,6,23,0.08);
           transform: translateY(40px);
           opacity: 0;
           transition: all 0.7s ease;
           position: relative;
           overflow: hidden;
+          border: 1px solid #e2e8f0;
         }
 
         .service-card::before {
@@ -67,7 +70,7 @@ const HomePageService = () => {
           left: 0;
           height: 4px;
           width: 100%;
-          background: linear-gradient(90deg, #2563eb, #38bdf8);
+          background: linear-gradient(90deg, #0a1931, #0f2a5a);
           opacity: 0;
           transition: opacity 0.4s ease;
         }
@@ -79,7 +82,7 @@ const HomePageService = () => {
 
         .service-card:hover {
           transform: translateY(-10px);
-          box-shadow: 0 30px 60px rgba(11, 28, 63, 0.15);
+          box-shadow: 0 30px 60px rgba(2,6,23,0.15);
         }
 
         .service-card:hover::before {
@@ -87,19 +90,37 @@ const HomePageService = () => {
         }
 
         .service-card h3 {
-          color: #0b1c3f;
+          color: #0a1931;
           font-size: 22px;
           margin-bottom: 14px;
           line-height: 1.35;
         }
 
         .service-card p {
-          color: #5c6c8a;
+          color: #475569;
           font-size: 15px;
           line-height: 1.7;
         }
 
-        /* ========= TABLET ========= */
+        .services-floating-button {
+          position: absolute;
+          right: 2rem;
+          bottom: -20px;
+          background: linear-gradient(135deg, #0a1931, #0f2a5a);
+          color: white;
+          padding: 0.8rem 1.6rem;
+          border-radius: 9999px;
+          font-weight: 600;
+          box-shadow: 0 10px 25px rgba(2,6,23,0.25);
+          cursor: pointer;
+          transition: all 0.3s ease;
+          text-decoration: none;
+        }
+
+        .services-floating-button:hover {
+          transform: translateY(-3px);
+        }
+
         @media (max-width: 900px) {
           .services-section {
             padding: 90px 6%;
@@ -114,7 +135,6 @@ const HomePageService = () => {
           }
         }
 
-        /* ========= MOBILE ========= */
         @media (max-width: 600px) {
           .services-section {
             padding: 70px 5%;
@@ -143,6 +163,12 @@ const HomePageService = () => {
 
           .service-card p {
             font-size: 14px;
+          }
+
+          .services-floating-button {
+            position: static;
+            display: inline-block;
+            margin-top: 30px;
           }
         }
       `}</style>
@@ -179,6 +205,10 @@ const HomePageService = () => {
             </p>
           </div>
         </div>
+
+        <Link to="./services" className="services-floating-button">
+          View all of our Services
+        </Link>
       </section>
     </>
   );
