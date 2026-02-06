@@ -12,7 +12,7 @@ const HomeContact = () => {
       <style>{`
         .contact-section {
           padding: 120px 8%;
-          background: linear-gradient(135deg, #0b1c3d, #020617);
+          background: linear-gradient(135deg, #0a1931, #020617);
           color: #ffffff;
           opacity: 0;
           transform: translateY(40px);
@@ -42,7 +42,7 @@ const HomeContact = () => {
         .contact-left p {
           font-size: 16px;
           line-height: 1.7;
-          color: #cbd5f5;
+          color: #cbd5e1;
           margin-bottom: 30px;
         }
 
@@ -62,7 +62,7 @@ const HomeContact = () => {
         }
 
         .contact-form h3 {
-          color: #0b1c3d;
+          color: #0a1931;
           margin-bottom: 24px;
           font-size: 22px;
         }
@@ -73,11 +73,11 @@ const HomeContact = () => {
           padding: 14px 16px;
           margin-bottom: 16px;
           border-radius: 10px;
-          border: 1px solid #cbd5f5;
+          border: 1px solid #e2e8f0;
           font-size: 14px;
           font-family: inherit;
           outline: none;
-          fint-color:black;
+          color: #0f172a;
         }
 
         .contact-form textarea {
@@ -90,7 +90,7 @@ const HomeContact = () => {
           width: 100%;
           border-radius: 999px;
           border: none;
-          background: #2563eb;
+          background: linear-gradient(135deg, #0a1931, #0f2a5a);
           color: #ffffff;
           font-weight: 700;
           cursor: pointer;
@@ -98,7 +98,7 @@ const HomeContact = () => {
         }
 
         .contact-form button:hover {
-          background: #1d4ed8;
+          transform: translateY(-2px);
         }
 
         @media (max-width: 900px) {
