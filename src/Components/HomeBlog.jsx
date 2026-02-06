@@ -35,7 +35,7 @@ const HomeBlog = () => {
         .blog-header h2 {
           font-size: 40px;
           font-weight: 800;
-          color: #0b1c3d;
+          color: #0a1931;
           margin-bottom: 14px;
         }
 
@@ -53,13 +53,14 @@ const HomeBlog = () => {
         }
 
         .blog-card {
-          background: #f8fafc;
+          background: #ffffff;
           border-radius: 18px;
           overflow: hidden;
           box-shadow: 0 18px 40px rgba(2,6,23,0.08);
           transform: translateY(40px);
           opacity: 0;
           transition: all 0.7s ease;
+          border: 1px solid #e2e8f0;
         }
 
         .blog-card.show {
@@ -74,7 +75,7 @@ const HomeBlog = () => {
 
         .blog-image {
           height: 180px;
-          background: linear-gradient(135deg, #0b1c3d, #020617);
+          background: linear-gradient(135deg, #0a1931, #020617);
         }
 
         .blog-content {
@@ -85,7 +86,7 @@ const HomeBlog = () => {
           display: inline-block;
           font-size: 13px;
           font-weight: 600;
-          color: #2563eb;
+          color: #0a1931;
           margin-bottom: 10px;
         }
 
@@ -106,16 +107,15 @@ const HomeBlog = () => {
         .blog-content a {
           font-size: 14px;
           font-weight: 700;
-          color: #0b1c3d;
+          color: #0a1931;
           text-decoration: none;
-          transition: color 0.3s ease;
+          transition: all 0.3s ease;
         }
 
         .blog-content a:hover {
-          color: #2563eb;
+          color: #0f2a5a;
         }
 
-        /* ===== TABLET ===== */
         @media (max-width: 900px) {
           .blog-section {
             padding: 90px 6%;
