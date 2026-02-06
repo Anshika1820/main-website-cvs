@@ -7,6 +7,8 @@ import AboutUs from "./Pages/AboutUs";
 import Blog from "./Pages/Blog";
 import Signup from "./Pages/Signup";
 import Login from "./Pages/Login";
+import ServicesDetails from "./Pages/ServicesDetails";
+import ContactUs from "./Pages/ContactUs";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -16,6 +18,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/services-details" element={<ServicesDetails/>}/>
+        <Route path="/contactus" element={<ContactUs/>}/>
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/signup" element={<Signup />} />
