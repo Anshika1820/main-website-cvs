@@ -130,7 +130,6 @@ const HomeBlog = () => {
           }
         }
 
-        /* ===== MOBILE ===== */
         @media (max-width: 600px) {
           .blog-section {
             padding: 70px 5%;

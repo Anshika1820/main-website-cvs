@@ -31,7 +31,6 @@ const About = () => {
           color: #fff;
         }
 
-        /* General section styling (smaller padding for most sections) */
         section:not(.hero) {
           padding: 100px 24px;
           position: relative;
@@ -60,7 +59,6 @@ const About = () => {
           line-height: 1.6;
         }
 
-        /* ===== HERO ===== */
         .hero {
           padding: 80px 24px 120px 24px; /* smaller top padding to fix navbar issue */
           background-image:
@@ -80,8 +78,7 @@ const About = () => {
           inset: 0;
           background-image:
             linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
-          background-size: 60px 60px;
+            background-size: 60px 60px;
           pointer-events: none;
         }
 
@@ -240,7 +237,6 @@ const About = () => {
         }
       `}</style>
 
-      {/* HERO */}
       <section className="hero">
         <div className="container">
           <h2>
@@ -262,7 +258,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* STATS */}
       <section>
         <div className="container stats">
           {stats.map((s, i) => (
@@ -274,7 +269,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* WORKFLOW */}
       <section>
         <div className="container workflow">
           <div className="workflow-left">
@@ -302,7 +296,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* CTA */}
       <section className="cta">
         <h2>Recognition & Expertise</h2>
         <p>

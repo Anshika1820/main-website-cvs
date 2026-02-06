@@ -3,6 +3,7 @@ import HomePageServices from "../Components/HomePageService";
 import HomeAbout from "../Components/HomeAbout";
 import HomeBlog from "../Components/HomeBlog";
 import HomeContact from "../Components/HomeContact";
+
 const Home = () => {
   const [active, setActive] = useState(false);
 
@@ -29,10 +30,10 @@ const Home = () => {
           background-image:
             radial-gradient(circle at 20% 30%, rgba(37,99,235,0.15), transparent 40%),
             radial-gradient(circle at 80% 70%, rgba(15,23,42,0.25), transparent 45%);
-          pointer-events: none;
         }
 
-        .hero .container {
+        /* RENAMED FROM .container */
+        .hero-container {
           max-width: 1200px;
           margin: auto;
           padding: 0 24px;
@@ -86,29 +87,30 @@ const Home = () => {
           margin-bottom: 44px;
         }
 
-        .actions {
+        /* RENAMED FROM .actions */
+        .hero-actions {
           display: flex;
           gap: 18px;
           flex-wrap: wrap;
         }
 
-        .btn-primary,
-        .btn-outline {
+        /* RENAMED BUTTONS */
+        .hero-btn-primary,
+        .hero-btn-outline {
           padding: 14px 36px;
           border-radius: 999px;
           font-weight: 700;
           text-decoration: none;
           transition: all 0.3s ease;
-          white-space: nowrap;
         }
 
-        .btn-primary {
+        .hero-btn-primary {
           background: linear-gradient(135deg, #1d4ed8, #2563eb);
           color: white;
           box-shadow: 0 18px 40px rgba(37,99,235,0.35);
         }
 
-        .btn-outline {
+        .hero-btn-outline {
           border: 2px solid #1d4ed8;
           color: #1d4ed8;
         }
@@ -129,93 +131,32 @@ const Home = () => {
           transform: translateX(0);
         }
 
-        .visual h3 {
-          font-size: 24px;
-          margin-bottom: 18px;
-          color: #38bdf8;
-        }
-
-        .visual ul {
-          list-style: none;
-          padding: 0;
-          margin: 0;
-        }
-
-        .visual li {
-          margin-bottom: 14px;
-          font-size: 14px;
-          color: #cbd5f5;
-        }
-
-        /* ================= MOBILE ================= */
-
         @media (max-width: 900px) {
-          .hero {
-            background: #ffffff;
-          }
-
-          .hero .container {
+          .hero-container {
             grid-template-columns: 1fr;
             gap: 60px;
-          }
-
-          .visual {
-            transform: translateY(40px);
-          }
-
-          .visual.show {
-            transform: translateY(0);
-          }
-        }
-
-        @media (max-width: 600px) {
-          .hero {
-            padding-top: 80px;
-          }
-
-          .hero h1 {
-            font-size: 36px;
-          }
-
-          .hero h1 span {
-            font-size: 34px;
-          }
-
-          .hero p {
-            font-size: 15px;
-          }
-
-          .actions {
-            flex-direction: column;
-            align-items: flex-start;
-          }
-
-          .btn-primary,
-          .btn-outline {
-            width: 100%;
-            text-align: center;
-          }
-
-          .visual {
-            padding: 32px;
           }
         }
       `}</style>
 
       <section className="hero">
-        <div className="container">
+        <div className="hero-container">
           <div className={`content ${active ? "show" : ""}`}>
             <div className="tag">Enterprise Cybersecurity Solutions</div>
+
             <h1>
               Welcome to <span>CODEVIRUS SECURITY</span>
             </h1>
+
             <p>
-              We protect your network with layered security, combining next-gen firewalls, intrusion prevention, secure access, and zero-trust principles.
+              We protect your network with layered security, combining next-gen
+              firewalls, intrusion prevention, secure access, and zero-trust
+              principles.
             </p>
 
-            <div className="actions">
-              <a href="/" className="btn-primary">Get Started</a>
-              <a href="/" className="btn-outline">How We Operate</a>
+            <div className="hero-actions">
+              <a href="/" className="hero-btn-primary">Get Started</a>
+              <a href="/" className="hero-btn-outline">How We Operate</a>
             </div>
           </div>
 
@@ -232,9 +173,9 @@ const Home = () => {
       </section>
 
       <HomePageServices />
-      <HomeAbout/>
-      <HomeBlog/>
-      <HomeContact/>
+      <HomeAbout />
+      <HomeBlog />
+      <HomeContact />
     </>
   );
 };

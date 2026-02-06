@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/img/logo.png";
 import Signup from "../Pages/Signup";
 import Login from "../Pages/Login";
+import {FiHome} from 'react-icons/fi'
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -28,12 +29,10 @@ const Navbar = () => {
     <>
       <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
         <div className="nav-inner">
-          {/* LOGO */}
           <Link to="/" className="logo">
             <img src={logo} alt="Logo" />
-          </Link>
+          </Link> 
 
-          {/* DESKTOP MENU */}
           <ul className="nav-links">
             {menuItems.map((item) => (
               <li key={item.name}>
@@ -64,7 +63,6 @@ const Navbar = () => {
             </li>
           </ul>
 
-          {/* HAMBURGER */}
           <div
             className={`menu-icon ${menuOpen ? "open" : ""}`}
             onClick={() => setMenuOpen(!menuOpen)}
@@ -75,7 +73,6 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* MOBILE MENU */}
         <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
           {menuItems.map((item) => (
             <Link
@@ -94,142 +91,130 @@ const Navbar = () => {
         </div>
 
         <style>{`
-          * {
-            box-sizing: border-box;
-            font-family: Poppins, sans-serif;
-          }
-
           .navbar {
             position: fixed;
-            top: 14px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: calc(100% - 28px);
-            max-width: 1200px;
-            background: rgba(255,255,255,0.96);
-            border-radius: 16px;
-            border: 1px solid rgba(0,0,0,0.08);
-            z-index: 1000;
-            transition: box-shadow 0.3s ease;
+            top: 0;
+            width: 100%;
+            background: white;
+            border-bottom: 1px solid #e5e7eb;
+            z-index: 10000;
+            transition: all 0.3s ease;
           }
 
           .navbar.scrolled {
-            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
           }
 
           .nav-inner {
-            height: 68px;
-            padding: 0 20px;
+            width: 100%;
+            padding: 0 40px;
             display: flex;
             align-items: center;
-            justify-content: space-between;
           }
 
-          /* LOGO */
           .logo img {
-            height: 48px;
+            height: 60px;
+            width:120px;;
+            display: block;
           }
 
-          /* DESKTOP LINKS */
           .nav-links {
             list-style: none;
             display: flex;
+            gap: 40px;
             align-items: center;
-            gap: 22px;
-            margin-left: auto; /* PUSH MENU TO RIGHT */
+            margin-left: auto;
           }
 
           .nav-links a {
             text-decoration: none;
-            font-size: 15px;
-            color: #020617;
+            color: #0b2a5b;
             font-weight: 500;
-            position: relative;
+            transition: 0.2s;
           }
 
-          .nav-links a.active {
-            color: #2563eb;
+          .nav-links a:hover {
+            color: #163d82;
+            text-shadow: 2px 2px rgba(0,0,0,0.2);
+          }
+
+          .nav-links:hover{
+
+          }
+
+          .active {
+            border-bottom: 2px solid #0b2a5b;
+            padding-bottom: 4px;
           }
 
           .btn-outline {
-            padding: 6px 18px;
-            border-radius: 999px;
-            border: 1px solid #2563eb;
-            background: transparent;
-            color: #2563eb;
-            font-weight: 600;
+            border: 1px solid #0b2a5b;
+            background: white;
+            color: #0b2a5b;
+            padding: 6px 14px;
+            border-radius: 6px;
             cursor: pointer;
+          }
+
+          .btn-outline:hover {
+            background: #f3f6fc;
           }
 
           .btn-primary {
-            padding: 7px 20px;
-            border-radius: 999px;
+            background: #0b2a5b;
+            color: white;
             border: none;
-            background: #2563eb;
-            color: #fff;
-            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 6px;
             cursor: pointer;
           }
 
-          /* HAMBURGER */
+          .btn-primary:hover {
+            background: #163d82;
+          }
+
           .menu-icon {
             display: none;
             flex-direction: column;
-            gap: 5px;
             cursor: pointer;
+            gap: 4px;
           }
 
           .menu-icon span {
-            width: 26px;
+            width: 24px;
             height: 3px;
-            background: #020617;
-            border-radius: 2px;
+            background: #0b2a5b;
           }
 
-          /* MOBILE MENU */
           .mobile-menu {
-            position: absolute;
-            top: 78px;
-            left: 0;
-            width: 100%;
-            padding: 22px;
-            background: white;
-            border-radius: 14px;
-            display: flex;
+            display: none;
             flex-direction: column;
-            gap: 16px;
-            transform: translateY(-120%);
-            opacity: 0;
-            transition: 0.35s ease;
+            background: white;
+            padding: 16px;
+            border-top: 1px solid #eee;
           }
 
-          .mobile-menu.open {
-            transform: translateY(0);
-            opacity: 1;
+          .mobile-menu a {
+            padding: 10px 0;
+            text-decoration: none;
+            color: #0b2a5b;
           }
 
-          .mobile-menu a,
           .mobile-menu button {
-            text-align: left;
-            font-size: 16px;
-            background: none;
-            border: none;
-            cursor: pointer;
+            margin-top: 10px;
+            padding: 8px;
           }
 
-          .mobile-menu .filled {
-            background: #2563eb;
-            color: white;
-            padding: 10px;
-            border-radius: 10px;
-          }
-
-          /* RESPONSIVE */
           @media (max-width: 768px) {
             .nav-links {
               display: none;
             }
+
             .menu-icon {
+              display: flex;
+            }
+
+            .mobile-menu.open {
               display: flex;
             }
           }
