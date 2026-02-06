@@ -3,7 +3,6 @@ import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/img/logo.png";
 import Signup from "../Pages/Signup";
 import Login from "../Pages/Login";
-import {FiHome} from 'react-icons/fi'
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -31,7 +30,7 @@ const Navbar = () => {
         <div className="nav-inner">
           <Link to="/" className="logo">
             <img src={logo} alt="Logo" />
-          </Link> 
+          </Link>
 
           <ul className="nav-links">
             {menuItems.map((item) => (
@@ -95,14 +94,14 @@ const Navbar = () => {
             position: fixed;
             top: 0;
             width: 100%;
-            background: white;
-            border-bottom: 1px solid #e5e7eb;
+            background: #ffffff;
+            border-bottom: 1px solid #e6ecf5;
             z-index: 10000;
             transition: all 0.3s ease;
           }
 
           .navbar.scrolled {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            box-shadow: 0 6px 20px rgba(11,42,91,0.08);
           }
 
           .nav-inner {
@@ -114,14 +113,14 @@ const Navbar = () => {
 
           .logo img {
             height: 60px;
-            width:120px;;
+            width: 120px;
             display: block;
           }
 
           .nav-links {
             list-style: none;
             display: flex;
-            gap: 40px;
+            gap: 36px;
             align-items: center;
             margin-left: auto;
           }
@@ -129,17 +128,13 @@ const Navbar = () => {
           .nav-links a {
             text-decoration: none;
             color: #0b2a5b;
-            font-weight: 500;
-            transition: 0.2s;
+            font-weight: 600;
+            transition: all 0.25s ease;
+            letter-spacing: 0.3px;
           }
 
           .nav-links a:hover {
             color: #163d82;
-            text-shadow: 2px 2px rgba(0,0,0,0.2);
-          }
-
-          .nav-links:hover{
-
           }
 
           .active {
@@ -148,16 +143,18 @@ const Navbar = () => {
           }
 
           .btn-outline {
-            border: 1px solid #0b2a5b;
+            border: 1.5px solid #0b2a5b;
             background: white;
             color: #0b2a5b;
             padding: 6px 14px;
             border-radius: 6px;
             cursor: pointer;
+            font-weight: 600;
+            transition: 0.25s;
           }
 
           .btn-outline:hover {
-            background: #f3f6fc;
+            background: #f4f7fd;
           }
 
           .btn-primary {
@@ -167,6 +164,8 @@ const Navbar = () => {
             padding: 6px 14px;
             border-radius: 6px;
             cursor: pointer;
+            font-weight: 600;
+            transition: 0.25s;
           }
 
           .btn-primary:hover {
@@ -184,20 +183,22 @@ const Navbar = () => {
             width: 24px;
             height: 3px;
             background: #0b2a5b;
+            border-radius: 2px;
           }
 
           .mobile-menu {
             display: none;
             flex-direction: column;
-            background: white;
+            background: #ffffff;
             padding: 16px;
-            border-top: 1px solid #eee;
+            border-top: 1px solid #e6ecf5;
           }
 
           .mobile-menu a {
             padding: 10px 0;
             text-decoration: none;
             color: #0b2a5b;
+            font-weight: 600;
           }
 
           .mobile-menu button {
@@ -212,6 +213,7 @@ const Navbar = () => {
 
             .menu-icon {
               display: flex;
+              margin-left: auto;
             }
 
             .mobile-menu.open {
