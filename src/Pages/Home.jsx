@@ -18,7 +18,7 @@ const Home = () => {
           min-height: 100vh;
           display: flex;
           align-items: center;
-          background: linear-gradient(120deg, #ffffff 55%, #0b1c3d 45%);
+          background: linear-gradient(120deg, #ffffff 55%, #0a1931 45%);
           position: relative;
           overflow: hidden;
         }
@@ -28,11 +28,10 @@ const Home = () => {
           position: absolute;
           inset: 0;
           background-image:
-            radial-gradient(circle at 20% 30%, rgba(37,99,235,0.15), transparent 40%),
-            radial-gradient(circle at 80% 70%, rgba(15,23,42,0.25), transparent 45%);
+            radial-gradient(circle at 20% 30%, rgba(10,25,49,0.08), transparent 40%),
+            radial-gradient(circle at 80% 70%, rgba(10,25,49,0.18), transparent 45%);
         }
 
-        /* RENAMED FROM .container */
         .hero-container {
           max-width: 1200px;
           margin: auto;
@@ -57,8 +56,8 @@ const Home = () => {
 
         .tag {
           display: inline-block;
-          background: rgba(37,99,235,0.1);
-          color: #1d4ed8;
+          background: rgba(10,25,49,0.08);
+          color: #0a1931;
           padding: 8px 18px;
           border-radius: 999px;
           font-weight: 600;
@@ -71,30 +70,29 @@ const Home = () => {
           line-height: 1.15;
           margin-bottom: 26px;
           font-weight: 900;
+          color: #0a1931;
           font-family: cursive;
         }
 
         .hero h1 span {
-          color: #1d4ed8;
+          color: #0f2a5a;
           font-size: 50px;
         }
 
         .hero p {
           font-size: 18px;
           line-height: 1.7;
-          color: #334155;
+          color: #475569;
           max-width: 520px;
           margin-bottom: 44px;
         }
 
-        /* RENAMED FROM .actions */
         .hero-actions {
           display: flex;
           gap: 18px;
           flex-wrap: wrap;
         }
 
-        /* RENAMED BUTTONS */
         .hero-btn-primary,
         .hero-btn-outline {
           padding: 14px 36px;
@@ -105,21 +103,31 @@ const Home = () => {
         }
 
         .hero-btn-primary {
-          background: linear-gradient(135deg, #1d4ed8, #2563eb);
+          background: linear-gradient(135deg, #0a1931, #0f2a5a);
           color: white;
-          box-shadow: 0 18px 40px rgba(37,99,235,0.35);
+          box-shadow: 0 18px 40px rgba(10,25,49,0.35);
+        }
+
+        .hero-btn-primary:hover {
+          transform: translateY(-3px);
         }
 
         .hero-btn-outline {
-          border: 2px solid #1d4ed8;
-          color: #1d4ed8;
+          border: 2px solid #0a1931;
+          color: #0a1931;
+          background: white;
+        }
+
+        .hero-btn-outline:hover {
+          background: #0a1931;
+          color: white;
         }
 
         .visual {
-          background: linear-gradient(180deg, #0b1c3d, #020617);
+          background: linear-gradient(180deg, #0a1931, #020617);
           border-radius: 28px;
           padding: 50px;
-          color: #e5e7eb;
+          color: #e2e8f0;
           box-shadow: 0 40px 80px rgba(2,6,23,0.6);
           opacity: 0;
           transform: translateX(50px);
@@ -129,6 +137,17 @@ const Home = () => {
         .visual.show {
           opacity: 1;
           transform: translateX(0);
+        }
+
+        .visual h3 {
+          margin-bottom: 20px;
+          color: #ffffff;
+        }
+
+        .visual ul {
+          line-height: 2;
+          padding-left: 0;
+          list-style: none;
         }
 
         @media (max-width: 900px) {
