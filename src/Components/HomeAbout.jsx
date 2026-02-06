@@ -30,7 +30,7 @@ const HomeAbout = () => {
         .about-left h2 {
           font-size: 40px;
           font-weight: 800;
-          color: #0b1c3d;
+          color: #0a1931;
           margin-bottom: 22px;
         }
 
@@ -49,28 +49,28 @@ const HomeAbout = () => {
 
         .about-points span {
           font-size: 15px;
-          color: #1e293b;
+          color: #0a1931;
           font-weight: 600;
         }
 
         .about-right {
-          background: linear-gradient(180deg, #0b1c3d, #020617);
-          color: #e5e7eb;
+          background: linear-gradient(180deg, #0a1931, #020617);
+          color: #e2e8f0;
           padding: 50px;
           border-radius: 22px;
-          box-shadow: 0 30px 70px rgba(2,6,23,0.6);
+          box-shadow: 0 30px 70px rgba(2,6,23,0.55);
         }
 
         .about-right h3 {
           font-size: 24px;
           margin-bottom: 18px;
-          color: #38bdf8;
+          color: #ffffff;
         }
 
         .about-right p {
           font-size: 15px;
           line-height: 1.7;
-          color: #cbd5f5;
+          color: #cbd5e1;
         }
 
         @media (max-width: 900px) {
